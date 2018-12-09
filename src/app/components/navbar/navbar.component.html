@@ -1,0 +1,19 @@
+<!-- navbar.component.html -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0)" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0)" routerLink="/job">Jobs</a>
+      </li>
+    </ul>
+  </div>
+  <form class="form-inline">
+    <span *ngIf="isLoggedIn$ | async">
+      <a href="javascript:void(0)" (click)="onLogout()">Log out</a>
+    </span>
+  </form>
+</nav>
