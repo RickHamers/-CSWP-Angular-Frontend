@@ -24,8 +24,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         () => {
         console.log('login succeeded');
-        // TODO redirect
-        this.router.navigate(['/api/register']);
+        this.router.navigate(['/index']);
         },
         () => {
           console.log('login failed');

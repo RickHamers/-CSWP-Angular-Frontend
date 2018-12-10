@@ -11,7 +11,7 @@ import {AuthService} from '../../services/auth.service';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  constructor(private authservice: AuthService, router: Router) { }
+  constructor(private authservice: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.registerForm = new FormGroup({});
@@ -26,8 +26,7 @@ export class RegisterComponent implements OnInit {
       .subscribe(
         () => {
           console.log('register succeeded');
-          // TODO redirect
-          // this.router.navigate(['post-url (route)'])
+          this.router.navigate(['/login']);
         },
         () => {
           console.log('register failed');

@@ -14,7 +14,7 @@
       <label>Password:</label>
       <input title="password" type="password" class="form-control" formControlName="password" required>
     </div>
-    <button routerLink="/login" type="button" (click)="onSubmit()" [disabled]="!registerForm.valid" class="btn btn-primary">Create account</button>
+    <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary">Create account</button>
   </form>
 </div>
 
