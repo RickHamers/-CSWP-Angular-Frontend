@@ -77,7 +77,6 @@ export class AuthService {
         password: password
       },
       {headers: this.createHeader()}).pipe(
-      tap(response => this.saveCredentials(response))
     );
   }
 
