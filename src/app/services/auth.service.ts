@@ -56,10 +56,11 @@ export class AuthService {
   }
 
   private returnToken() {
-    return localStorage.getItem('x-access-token');
+    return localStorage.getItem('x-access-token') || '';
   }
 
   login(username: string, password: string) {
+    console.log('Login function');
     return this.httpclient.post(`${environment.apiUrl}/api/login`, {
       username: username,
       password: password
