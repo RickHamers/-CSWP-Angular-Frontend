@@ -23,12 +23,12 @@ export class LoginComponent implements OnInit {
     this.authService.login(username, password)
       .subscribe(
         () => {
-        console.log('succeeded');
+        console.log('login succeeded');
         // TODO redirect
-        // this.router.navigate(['post-url (route)'])
+        this.router.navigate(['/api/register']);
         },
         () => {
-          console.log('failed');
+          console.log('login failed');
         }
       );
   }

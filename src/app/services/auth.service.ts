@@ -69,6 +69,18 @@ export class AuthService {
         tap(response => this.saveCredentials(response))
     );
   }
+
+  register(username: string, password: string) {
+    console.log('Register function');
+    return this.httpclient.post(`${environment.apiUrl}/api/register`, {
+        username: username,
+        password: password
+      },
+      {headers: this.createHeader()}).pipe(
+      tap(response => this.saveCredentials(response))
+    );
+  }
+
   get isLoggedIn() {
     return this.isLoggedIn$.asObservable();
   }

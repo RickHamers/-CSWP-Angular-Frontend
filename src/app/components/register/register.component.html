@@ -1,8 +1,8 @@
-<!-- login.component.html -->
+<!-- register.component.html -->
 
 <div class="container">
-  <h1>Log in</h1>
-  <form [formGroup]="loginForm" class="form-login" (ngSubmit)="onSubmit()">
+  <h1>Register</h1>
+  <form [formGroup]="registerForm" class="form-register" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Username</label>
       <input type="text" class="form-control" formControlName="username" required>
@@ -11,7 +11,7 @@
       <label>Password</label>
       <input type="password" class="form-control" formControlName="password" required>
     </div>
-    <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Log in</button>
-    <a routerLink="/register">Don't have an account yet? Click here!</a>
+    <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary">Create account</button>
   </form>
 </div>
+
