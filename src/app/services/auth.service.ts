@@ -34,12 +34,14 @@ export class AuthService {
   private saveCredentials(credentials) {
     localStorage.setItem('x-access-token', credentials.token);
     localStorage.setItem('expiresAt', credentials.expiresAt);
+    localStorage.setItem('username', credentials.username);
     this.isLoggedIn$.next(true);
   }
 
   public logout() {
     localStorage.removeItem('x-access-token');
     localStorage.removeItem('expiresAt');
+    localStorage.removeItem('username');
     this.isLoggedIn$.next(false);
   }
 
@@ -57,6 +59,10 @@ export class AuthService {
 
   private returnToken() {
     return localStorage.getItem('x-access-token') || '';
+  }
+
+  returnUsername() {
+    return localStorage.getItem('username') || '';
   }
 
   login(username: string, password: string) {

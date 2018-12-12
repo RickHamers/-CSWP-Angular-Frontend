@@ -1,0 +1,22 @@
+<!-- thread-detail.component.html -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="text-lg-center">
+    <h1 *ngIf="isLoading" class="display-4">Loading...</h1>
+    <h1 *ngIf="!isLoading" class="display-4">{{ thread.title }}</h1>
+    <hr class="my-4">
+  </div>
+</div>
+  <div class="container" *ngIf="!isLoading">
+    <p>{{ thread.content }}</p>
+    <p>{{ thread.username }}</p>
+    <div class="col">
+      <div class="row" style="margin-bottom: 20px;border: 1px lightgray solid; height: 100px" [ngStyle]="{'margin-left': (comment.depth * 1) + '%', 'width': (100-(comment.depth * 1)) + '%'}" *ngFor="let comment of thread.comments">
+        <div>
+          <div>
+            <p class="lead">{{ comment.username }}</p>
+            <p>{{ comment.content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

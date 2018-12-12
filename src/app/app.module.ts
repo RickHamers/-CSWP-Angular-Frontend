@@ -11,6 +11,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './components/register/register.component';
 import { IndexComponent } from './components/index/index.component';
 import { ThreadDetailComponent } from './components/thread-detail/thread-detail.component';
+import { ThreadCreateComponent } from './components/thread-create/thread-create.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ThreadDetailComponent } from './components/thread-detail/thread-detail.
     LoginComponent,
     RegisterComponent,
     IndexComponent,
-    ThreadDetailComponent
+    ThreadDetailComponent,
+    ThreadCreateComponent
   ],
   imports: [
     FormsModule,

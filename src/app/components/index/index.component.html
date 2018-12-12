@@ -3,8 +3,13 @@
     <h1 class="display-4">Index</h1>
     <hr class="my-4">
   </div>
-  <p class="lead">Threads go here</p>
-  <div *ngFor="let thread of (threads$ | async)">
-    <a href="javascript:void(0)" routerLink="/threadDetail/{{thread._id}}">{{thread.title}}</a>
+</div>
+<div class = container>
+  <div class="row">
+<div class="col-sm-4" *ngFor="let thread of (threads$ | async)">
+      <h3><a href="javascript:void(0)" routerLink="/threadDetail/{{thread._id}}">{{thread.title}}</a></h3>
+      <p>{{thread.content.substring(0,150)}}</p>
+      <small><p>Author: {{thread.username}}</p></small>
+</div>
   </div>
 </div>

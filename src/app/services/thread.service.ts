@@ -25,4 +25,8 @@ export class ThreadService {
   getThread(id: string) {
     return this.httpclient.get(`${environment.apiUrl}/api/thread?id=` + id, {headers: this.authservice.createHeader()});
   }
+
+  postThread(title: string, content: string) {
+    return this.httpclient.post(`${environment.apiUrl}/api/thread`, {username: this.authservice.returnUsername(), title: title, content: content}, {headers: this.authservice.createHeader()});
+  }
 }
