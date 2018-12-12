@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ThreadService} from '../../services/thread.service';
 import {Subscription} from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
@@ -16,8 +16,9 @@ export class ThreadDetailComponent implements OnInit, OnDestroy {
   private newComments = [];
   private thread;
   private isLoading: boolean = true;
+  private isLoginName: boolean = false;
   private getThreadSubscription: Subscription;
-  constructor(private activatedroute: ActivatedRoute, private threadservice: ThreadService, private authservice: AuthService) { }
+  constructor(private activatedroute: ActivatedRoute, private threadservice: ThreadService, private authservice: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.activatedroute.params.subscribe(
@@ -28,7 +29,9 @@ export class ThreadDetailComponent implements OnInit, OnDestroy {
             this.thread = result;
             this.unwindComments(this.thread.comments);
             this.thread.comments = this.newComments;
-            this.isLoading = false;
+            if (this.authservice.returnUsername() === this.thread.username) {
+              this.isLoginName = true; }
+              this.isLoading = false;
           }
         );
       }
@@ -72,5 +75,18 @@ export class ThreadDetailComponent implements OnInit, OnDestroy {
           console.log('comment failed');
         }
       );
+  }
+
+  onDelete() {
+    const threadId = this.thread._id;
+    this.threadservice.deleteThread(threadId)
+      .subscribe(
+        () => {
+          console.log('delete thread succeeded');
+          this.router.navigate(['/index']);
+        },
+        () => {
+          console.log('delete thread failed');
+        });
   }
 }

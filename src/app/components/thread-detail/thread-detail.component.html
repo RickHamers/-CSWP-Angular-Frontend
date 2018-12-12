@@ -4,6 +4,9 @@
   <div class="text-lg-center">
     <h1 *ngIf="isLoading" class="display-4">Loading...</h1>
     <h1 *ngIf="!isLoading" class="display-4">{{ thread.title }}</h1>
+    <span *ngIf="isLoginName">
+      <button class="btn btn-danger" (click)="onDelete()">Delete thread</button>
+    </span>
     <hr class="my-4">
   </div>
 </div>
