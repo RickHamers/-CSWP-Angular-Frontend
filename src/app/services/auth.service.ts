@@ -35,6 +35,7 @@ export class AuthService {
     localStorage.setItem('x-access-token', credentials.token);
     localStorage.setItem('expiresAt', credentials.expiresAt);
     localStorage.setItem('username', credentials.username);
+    localStorage.setItem('userID', credentials.id);
     this.isLoggedIn$.next(true);
   }
 
@@ -42,6 +43,7 @@ export class AuthService {
     localStorage.removeItem('x-access-token');
     localStorage.removeItem('expiresAt');
     localStorage.removeItem('username');
+    localStorage.removeItem('userID');
     this.isLoggedIn$.next(false);
   }
 
@@ -65,6 +67,10 @@ export class AuthService {
     return localStorage.getItem('username') || '';
   }
 
+  returnUserID() {
+    return localStorage.getItem('userID') || '';
+  }
+
   login(username: string, password: string) {
     console.log('Login function');
     return this.httpclient.post(`${environment.apiUrl}/api/login`, {
@@ -84,6 +90,17 @@ export class AuthService {
       },
       {headers: this.createHeader()}).pipe(
     );
+  }
+
+  changePassword(username: string, oldPassword: string, newPassword: string) {
+    console.log('Change password function');
+    return this.httpclient.put(`${environment.apiUrl}/api/user`, {
+      username: username,
+      password: oldPassword,
+      newPassword: newPassword
+    },
+      {headers: this.createHeader()}).pipe(
+      );
   }
 
   get isLoggedIn() {

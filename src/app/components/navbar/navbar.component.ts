@@ -10,12 +10,15 @@ import {Router} from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  private userID;
+
   isLoggedIn$: Observable<boolean>;
 
   constructor(private authservice: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.isLoggedIn$ = this.authservice.isLoggedIn;
+    this.userID = this.authservice.returnUserID();
   }
 
   onLogout() {

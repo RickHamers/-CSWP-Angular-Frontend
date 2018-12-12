@@ -19,13 +19,13 @@
     <small><p>Author: {{ thread.username }}</p></small>
     <hr class="my-4">
     <div class="col">
-      <div class="row" style="margin-bottom: 20px;border: 1px lightgray solid; height: 100px" [ngStyle]="{'margin-left': (comment.depth * 2) + '%', 'width': (100-(comment.depth * 2)) + '%'}" *ngFor="let comment of thread.comments">
+      <div class="row" style="margin-bottom: 20px;border: 1px lightgray solid; height: 130px" [ngStyle]="{'margin-left': (comment.depth * 2) + '%', 'width': (100-(comment.depth * 2)) + '%'}" *ngFor="let comment of thread.comments">
         <div>
           <div style="margin: 7pt">
             <p class="lead">{{ comment.username }}</p>
             <p>{{ comment.content }}</p>
-            <span *ngIf="">
-              <button class="btn btn-danger" (click)="onDelete()">Delete comment</button>
+            <span *ngIf="(isLoggedIn$ | async)">
+              <a routerLink="/threadComment/{{comment._id}}">reply</a>
             </span>
           </div>
         </div>

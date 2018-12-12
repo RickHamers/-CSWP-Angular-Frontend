@@ -13,6 +13,8 @@ import { IndexComponent } from './components/index/index.component';
 import { ThreadDetailComponent } from './components/thread-detail/thread-detail.component';
 import { ThreadCreateComponent } from './components/thread-create/thread-create.component';
 import { ThreadEditComponent } from './components/thread-edit/thread-edit.component';
+import { ThreadCommentComponent } from './components/thread-comment/thread-comment.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ThreadEditComponent } from './components/thread-edit/thread-edit.compon
     IndexComponent,
     ThreadDetailComponent,
     ThreadCreateComponent,
-    ThreadEditComponent
+    ThreadEditComponent,
+    ThreadCommentComponent,
+    ProfileComponent
   ],
   imports: [
     FormsModule,

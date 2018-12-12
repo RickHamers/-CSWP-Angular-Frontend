@@ -41,4 +41,12 @@ export class ThreadService {
   deleteThread(threadId: string) {
     return this.httpclient.delete(`${environment.apiUrl}/api/thread?id=` + threadId, {headers: this.authservice.createHeader()});
   }
+
+  getComment(id: string) {
+    return this.httpclient.get(`${environment.apiUrl}/api/comment?id=` + id, {headers: this.authservice.createHeader()});
+  }
+
+  postCommentOnComment(content: string, threadId: string, commentId: string) {
+    return this.httpclient.post(`${environment.apiUrl}/api/thread/comments?id=` + commentId, {content: content, username: this.authservice.returnUsername(), threadId: threadId}, {headers: this.authservice.createHeader()});
+  }
 }

@@ -7,6 +7,8 @@ import {ThreadDetailComponent} from './components/thread-detail/thread-detail.co
 import {ThreadCreateComponent} from './components/thread-create/thread-create.component';
 import {IsLoggedInGuardService} from './services/is-logged-in-guard.service';
 import {ThreadEditComponent} from './components/thread-edit/thread-edit.component';
+import {ThreadCommentComponent} from './components/thread-comment/thread-comment.component';
+import {ProfileComponent} from './components/profile/profile.component';
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
@@ -16,6 +18,8 @@ const routes: Routes = [
   {path: 'threadCreate', component: ThreadCreateComponent, canActivate: [IsLoggedInGuardService]},
   {path: 'threadDetail/:id', component: ThreadDetailComponent, canActivate: [IsLoggedInGuardService]},
   {path: 'threadEdit/:id', component: ThreadEditComponent, canActivate: [IsLoggedInGuardService]},
+  {path: 'threadComment/:id', component: ThreadCommentComponent, canActivate: [IsLoggedInGuardService]},
+  {path: 'profile/:id', component: ProfileComponent, canActivate: [IsLoggedInGuardService]},
   {path: '**', redirectTo: '/login', pathMatch: 'full'}
 ];
 
