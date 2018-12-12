@@ -5,7 +5,10 @@
     <h1 *ngIf="isLoading" class="display-4">Loading...</h1>
     <h1 *ngIf="!isLoading" class="display-4">{{ thread.title }}</h1>
     <span *ngIf="threadAuhorIsLoginName">
-      <button class="btn btn-danger" (click)="onDelete()">Delete thread</button>
+      <div class="btn-group">
+        <button class="btn btn-danger" (click)="onDelete()">Delete thread</button>
+        <button class="btn btn-dark" routerLink="/threadEdit/{{thread._id}}">Edit thread</button>
+      </div>
     </span>
     <hr class="my-4">
   </div>

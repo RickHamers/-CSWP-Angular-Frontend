@@ -12,6 +12,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { IndexComponent } from './components/index/index.component';
 import { ThreadDetailComponent } from './components/thread-detail/thread-detail.component';
 import { ThreadCreateComponent } from './components/thread-create/thread-create.component';
+import { ThreadEditComponent } from './components/thread-edit/thread-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ThreadCreateComponent } from './components/thread-create/thread-create.
     RegisterComponent,
     IndexComponent,
     ThreadDetailComponent,
-    ThreadCreateComponent
+    ThreadCreateComponent,
+    ThreadEditComponent
   ],
   imports: [
     FormsModule,

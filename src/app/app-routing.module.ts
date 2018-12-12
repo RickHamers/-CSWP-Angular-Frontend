@@ -6,6 +6,7 @@ import {IndexComponent} from './components/index/index.component';
 import {ThreadDetailComponent} from './components/thread-detail/thread-detail.component';
 import {ThreadCreateComponent} from './components/thread-create/thread-create.component';
 import {IsLoggedInGuardService} from './services/is-logged-in-guard.service';
+import {ThreadEditComponent} from './components/thread-edit/thread-edit.component';
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'index', component: IndexComponent, canActivate: [IsLoggedInGuardService]},
   {path: 'threadCreate', component: ThreadCreateComponent, canActivate: [IsLoggedInGuardService]},
   {path: 'threadDetail/:id', component: ThreadDetailComponent, canActivate: [IsLoggedInGuardService]},
+  {path: 'threadEdit/:id', component: ThreadEditComponent, canActivate: [IsLoggedInGuardService]},
   {path: '**', redirectTo: '/login', pathMatch: 'full'}
 ];
 

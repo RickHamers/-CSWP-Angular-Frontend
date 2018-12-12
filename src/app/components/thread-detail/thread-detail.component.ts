@@ -18,6 +18,7 @@ export class ThreadDetailComponent implements OnInit, OnDestroy {
   private isLoading: boolean = true;
   private threadAuhorIsLoginName: boolean = false;
   private getThreadSubscription: Subscription;
+
   constructor(private activatedroute: ActivatedRoute, private threadservice: ThreadService, private authservice: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -32,10 +33,8 @@ export class ThreadDetailComponent implements OnInit, OnDestroy {
             if (this.authservice.returnUsername() === this.thread.username) {
               this.threadAuhorIsLoginName = true; }
               this.isLoading = false;
-          }
-        );
-      }
-    );
+          });
+      });
 
     this.commentForm = new FormGroup({});
     this.commentForm.addControl('comment', new FormControl(null, [Validators.required]));

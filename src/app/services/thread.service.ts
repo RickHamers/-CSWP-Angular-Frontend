@@ -30,6 +30,10 @@ export class ThreadService {
     return this.httpclient.post(`${environment.apiUrl}/api/thread`, {username: this.authservice.returnUsername(), title: title, content: content}, {headers: this.authservice.createHeader()});
   }
 
+  updateThread(title: string, content: string, threadId: string) {
+    return this.httpclient.put(`${environment.apiUrl}/api/thread?id=` + threadId, {title: title, content: content}, {headers: this.authservice.createHeader()});
+  }
+
   postCommentOnThread(content: string, threadId: string) {
     return this.httpclient.post(`${environment.apiUrl}/api/thread/comment`, {content: content, username: this.authservice.returnUsername(), threadId: threadId}, {headers: this.authservice.createHeader()});
   }
