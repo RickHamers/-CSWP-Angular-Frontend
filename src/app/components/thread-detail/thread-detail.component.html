@@ -24,8 +24,10 @@
           <div style="margin: 7pt">
             <p class="lead">{{ comment.username }}</p>
             <p>{{ comment.content }}</p>
-            <span *ngIf="(isLoggedIn$ | async)">
-              <a routerLink="/threadComment/{{comment._id}}">reply</a>
+            <span style="display: inline" *ngIf="(isLoggedIn$ | async)">
+                <a routerLink="/threadComment/{{comment._id}}">reply</a>
+              <span>  |  </span>
+                  <a *ngIf="comment.username === loggedInUsername && comment.content !== '[deleted]'" routerLink="/updateComment/{{comment._id}}">update/delete</a>
             </span>
           </div>
         </div>

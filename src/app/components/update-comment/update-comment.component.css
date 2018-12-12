@@ -1,5 +1,5 @@
 /*
-    profile.component.css
+    register.component.css
  */
 
 :root {
@@ -28,7 +28,7 @@ body {
   background-size: cover;
 }
 
-.form-password {
+.form-comment {
   width: 100%;
   max-width: 420px;
   padding: 15px;

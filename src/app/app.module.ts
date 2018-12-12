@@ -15,6 +15,7 @@ import { ThreadCreateComponent } from './components/thread-create/thread-create.
 import { ThreadEditComponent } from './components/thread-edit/thread-edit.component';
 import { ThreadCommentComponent } from './components/thread-comment/thread-comment.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { UpdateCommentComponent } from './components/update-comment/update-comment.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     ThreadCreateComponent,
     ThreadEditComponent,
     ThreadCommentComponent,
-    ProfileComponent
+    ProfileComponent,
+    UpdateCommentComponent
   ],
   imports: [
     FormsModule,
