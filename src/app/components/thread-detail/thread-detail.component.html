@@ -4,7 +4,7 @@
   <div class="text-lg-center">
     <h1 *ngIf="isLoading" class="display-4">Loading...</h1>
     <h1 *ngIf="!isLoading" class="display-4">{{ thread.title }}</h1>
-    <span *ngIf="isLoginName">
+    <span *ngIf="threadAuhorIsLoginName">
       <button class="btn btn-danger" (click)="onDelete()">Delete thread</button>
     </span>
     <hr class="my-4">
@@ -21,6 +21,9 @@
           <div style="margin: 7pt">
             <p class="lead">{{ comment.username }}</p>
             <p>{{ comment.content }}</p>
+            <span *ngIf="">
+              <button class="btn btn-danger" (click)="onDelete()">Delete comment</button>
+            </span>
           </div>
         </div>
       </div>

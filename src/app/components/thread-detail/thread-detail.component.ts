@@ -16,7 +16,7 @@ export class ThreadDetailComponent implements OnInit, OnDestroy {
   private newComments = [];
   private thread;
   private isLoading: boolean = true;
-  private isLoginName: boolean = false;
+  private threadAuhorIsLoginName: boolean = false;
   private getThreadSubscription: Subscription;
   constructor(private activatedroute: ActivatedRoute, private threadservice: ThreadService, private authservice: AuthService, private router: Router) { }
 
@@ -30,7 +30,7 @@ export class ThreadDetailComponent implements OnInit, OnDestroy {
             this.unwindComments(this.thread.comments);
             this.thread.comments = this.newComments;
             if (this.authservice.returnUsername() === this.thread.username) {
-              this.isLoginName = true; }
+              this.threadAuhorIsLoginName = true; }
               this.isLoading = false;
           }
         );
