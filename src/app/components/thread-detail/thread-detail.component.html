@@ -1,4 +1,5 @@
 <!-- thread-detail.component.html -->
+
 <div class="jumbotron jumbotron-fluid">
   <div class="text-lg-center">
     <h1 *ngIf="isLoading" class="display-4">Loading...</h1>
@@ -12,13 +13,20 @@
     <small><p>Author: {{ thread.username }}</p></small>
     <hr class="my-4">
     <div class="col">
-      <div class="row" style="margin-bottom: 20px;border: 1px lightgray solid; height: 100px" [ngStyle]="{'margin-left': (comment.depth * 1) + '%', 'width': (100-(comment.depth * 1)) + '%'}" *ngFor="let comment of thread.comments">
+      <div class="row" style="margin-bottom: 20px;border: 1px lightgray solid; height: 100px" [ngStyle]="{'margin-left': (comment.depth * 2) + '%', 'width': (100-(comment.depth * 2)) + '%'}" *ngFor="let comment of thread.comments">
         <div>
-          <div>
+          <div style="margin: 7pt">
             <p class="lead">{{ comment.username }}</p>
             <p>{{ comment.content }}</p>
           </div>
         </div>
       </div>
     </div>
+    <hr class="my-4">
+    <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+      <textarea formControlName="comment" cols="100" rows="3"></textarea>
+      </div>
+      <button type="submit" [disabled]="!commentForm.valid" class="btn btn-primary">Comment</button>
+    </form>
   </div>

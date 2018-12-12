@@ -2,6 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ThreadService} from '../../services/thread.service';
 import {Subscription} from 'rxjs';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-thread-detail',
@@ -10,11 +12,12 @@ import {Subscription} from 'rxjs';
 })
 export class ThreadDetailComponent implements OnInit, OnDestroy {
 
+  private commentForm: FormGroup;
   private newComments = [];
   private thread;
   private isLoading: boolean = true;
   private getThreadSubscription: Subscription;
-  constructor(private activatedroute: ActivatedRoute, private threadservice: ThreadService) { }
+  constructor(private activatedroute: ActivatedRoute, private threadservice: ThreadService, private authservice: AuthService) { }
 
   ngOnInit() {
     this.activatedroute.params.subscribe(
@@ -30,6 +33,9 @@ export class ThreadDetailComponent implements OnInit, OnDestroy {
         );
       }
     );
+
+    this.commentForm = new FormGroup({});
+    this.commentForm.addControl('comment', new FormControl(null, [Validators.required]));
   }
 
   private unwindComments(comments) {
@@ -50,4 +56,21 @@ export class ThreadDetailComponent implements OnInit, OnDestroy {
     }
   }
 
+  onSubmit() {
+    const comment = this.commentForm.value['comment'];
+    this.threadservice.postCommentOnThread(comment, this.thread._id)
+      .subscribe(
+        () => {
+          console.log('comment succeeded');
+          this.thread.comments.push({
+            content: comment,
+            username: this.authservice.returnUsername(),
+            depth: 0
+          });
+        },
+        () => {
+          console.log('comment failed');
+        }
+      );
+  }
 }
