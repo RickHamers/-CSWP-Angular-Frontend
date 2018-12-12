@@ -24,7 +24,7 @@ export class AuthService {
     this.checkTokenExpiration();
   }
 
-  private createHeader() {
+   createHeader() {
     return new HttpHeaders({
       'Content-Type': 'application/json',
       'x-access-token': this.returnToken()

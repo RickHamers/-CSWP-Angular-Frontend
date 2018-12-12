@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './components/register/register.component';
 import { IndexComponent } from './components/index/index.component';
+import { ThreadDetailComponent } from './components/thread-detail/thread-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { IndexComponent } from './components/index/index.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    IndexComponent
+    IndexComponent,
+    ThreadDetailComponent
   ],
   imports: [
     FormsModule,

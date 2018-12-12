@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ThreadService} from '../../services/thread.service';
 
 @Component({
   selector: 'app-index',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  threads$;
+  constructor(private threadservice: ThreadService) { }
 
   ngOnInit() {
+    this.threads$ = this.threadservice.getAllThreads();
   }
 
 }

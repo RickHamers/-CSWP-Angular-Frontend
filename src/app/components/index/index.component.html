@@ -4,4 +4,7 @@
     <hr class="my-4">
   </div>
   <p class="lead">Threads go here</p>
+  <div *ngFor="let thread of (threads$ | async)">
+    <a href="javascript:void(0)" routerLink="/threadDetail/{{thread._id}}">{{thread.title}}</a>
+  </div>
 </div>
