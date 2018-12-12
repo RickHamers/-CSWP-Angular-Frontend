@@ -8,7 +8,9 @@
 </div>
   <div class="container" *ngIf="!isLoading">
     <p>{{ thread.content }}</p>
-    <p>{{ thread.username }}</p>
+    <hr class="my-4">
+    <small><p>Author: {{ thread.username }}</p></small>
+    <hr class="my-4">
     <div class="col">
       <div class="row" style="margin-bottom: 20px;border: 1px lightgray solid; height: 100px" [ngStyle]="{'margin-left': (comment.depth * 1) + '%', 'width': (100-(comment.depth * 1)) + '%'}" *ngFor="let comment of thread.comments">
         <div>
