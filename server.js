@@ -16,20 +16,12 @@ app.use(compression());
 //
 // Replace the name below to match your own "defaultProject" value!
 //
-const appname = 'cswp-angular-frontend';
+// Serve only the static files form the dist directory
+app.use(express.static(path.join(__dirname, 'dist/CSWP-Angular-Frontend')));
 
-// Point static path to dist
-app.use(express.static(path.join(__dirname, 'dist', appname)));
-
-// Catch all routes and return the index file
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', appname, 'index.html'));
+  res.sendFile(path.join(__dirname + '/dist/CSWP-Angular-Frontend/index.html'));
 });
 
-// Get port from environment and store in Express.
-const port = process.env.PORT || '4200';
-app.set('port', port);
-// Create HTTP server.
-const server = http.createServer(app);
-// Listen on provided port, on all network interfaces.
-server.listen(port, () => console.log(`Angular app \'${appname}\' running on port ${port}`));
+// Start the app by listening on the default Heroku port
+app.listen(process.env.PORT || 8080);

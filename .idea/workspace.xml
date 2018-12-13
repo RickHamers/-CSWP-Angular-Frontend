@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d0701b5-fe69-42ac-af90-3f9af0a6b102" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -37,7 +37,7 @@
         <counts>
           <entry key="css" value="37" />
           <entry key="html" value="58" />
-          <entry key="js" value="1" />
+          <entry key="js" value="2" />
           <entry key="json" value="7" />
           <entry key="ts" value="99" />
         </counts>
@@ -47,7 +47,7 @@
           <entry key="CSS" value="37" />
           <entry key="HTML" value="58" />
           <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="1" />
+          <entry key="JavaScript" value="2" />
           <entry key="TypeScript" value="99" />
         </counts>
       </usages-collector>
@@ -55,17 +55,17 @@
         <counts>
           <entry key="css" value="306" />
           <entry key="html" value="5315" />
-          <entry key="json" value="105" />
+          <entry key="json" value="106" />
           <entry key="ts" value="9476" />
-          <entry key="txt" value="721" />
+          <entry key="txt" value="762" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="306" />
           <entry key="HTML" value="5315" />
-          <entry key="JSON" value="105" />
-          <entry key="PLAIN_TEXT" value="721" />
+          <entry key="JSON" value="106" />
+          <entry key="PLAIN_TEXT" value="762" />
           <entry key="TypeScript" value="9476" />
         </counts>
       </usages-collector>
@@ -88,11 +88,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -203,7 +212,31 @@
             <path>
               <item name="-CSWP-Angular-Frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="-CSWP-Angular-Frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="-CSWP-Angular-Frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="-CSWP-Angular-Frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="CSWP-Angular-Frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="-CSWP-Angular-Frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="-CSWP-Angular-Frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="-CSWP-Angular-Frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="-CSWP-Angular-Frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="-CSWP-Angular-Frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="-CSWP-Angular-Frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="-CSWP-Angular-Frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -294,7 +327,7 @@
       <workItem from="1544435530570" duration="12422000" />
       <workItem from="1544617687119" duration="14998000" />
       <workItem from="1544731034075" duration="187000" />
-      <workItem from="1544732580440" duration="2456000" />
+      <workItem from="1544732580440" duration="3051000" />
     </task>
     <task id="LOCAL-00001" summary="Login functionality &amp; token lifecycle hook created">
       <created>1544395880025</created>
@@ -422,11 +455,32 @@
       <option name="project" value="LOCAL" />
       <updated>1544734566064</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="production build fix. package.json updated">
+      <created>1544735053038</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1544735053038</updated>
+    </task>
+    <task id="LOCAL-00020" summary="production build fix. package.json updated">
+      <created>1544735191861</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1544735191861</updated>
+    </task>
+    <task id="LOCAL-00021" summary="production build fix. git add banner.jpg">
+      <created>1544735372783</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1544735372783</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54006000" />
+    <option name="totallyTimeSpent" value="54601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1066" extended-state="6" />
@@ -477,7 +531,9 @@
     <MESSAGE value="Final commit/push. Added banner." />
     <MESSAGE value="Added online API support" />
     <MESSAGE value="production build fix." />
-    <option name="LAST_COMMIT_MESSAGE" value="production build fix." />
+    <MESSAGE value="production build fix. package.json updated" />
+    <MESSAGE value="production build fix. git add banner.jpg" />
+    <option name="LAST_COMMIT_MESSAGE" value="production build fix. git add banner.jpg" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/angular.json">
@@ -713,13 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/navbar/navbar.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -772,7 +821,14 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
         </state>
       </provider>
     </entry>
