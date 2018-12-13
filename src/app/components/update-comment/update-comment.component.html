@@ -1,0 +1,22 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="text-lg-center">
+    <h1 class="display-4">Your comment</h1>
+    <hr class="my-4">
+    <p class="lead">Change your comment here</p>
+  </div>
+</div>
+<div class="container" *ngIf="!isLoading">
+  <form [formGroup]="commentForm" class="form-comment">
+    <div class="form-group">
+      <input type="text" formControlName="content" class="form-control">
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-danger" (click)="onDelete()">Delete comment</button>
+      <button class="btn btn-success" (click)="onUpdate()">Update comment</button>
+    </div>
+  </form>
+</div>
+<div class="container" *ngIf="isLoading">
+  <p class="lead">Loading comment...</p>
+</div>
+

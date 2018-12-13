@@ -1,0 +1,43 @@
+<!-- thread-detail.component.html -->
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="text-lg-center">
+    <h1 *ngIf="isLoading" class="display-4">Loading...</h1>
+    <h1 *ngIf="!isLoading" class="display-4">{{ thread.title }}</h1>
+    <span *ngIf="threadAuhorIsLoginName">
+      <div class="btn-group">
+        <button class="btn btn-danger" (click)="onDelete()">Delete thread</button>
+        <button class="btn btn-dark" routerLink="/threadEdit/{{thread._id}}">Edit thread</button>
+      </div>
+    </span>
+    <hr class="my-4">
+  </div>
+</div>
+  <div class="container" *ngIf="!isLoading">
+    <p>{{ thread.content }}</p>
+    <hr class="my-4">
+    <small><p>Author: {{ thread.username }}</p></small>
+    <hr class="my-4">
+    <div class="col">
+      <div class="row" style="margin-bottom: 20px;border: 1px lightgray solid; height: 130px" [ngStyle]="{'margin-left': (comment.depth * 2) + '%', 'width': (100-(comment.depth * 2)) + '%'}" *ngFor="let comment of thread.comments">
+        <div>
+          <div style="margin: 7pt">
+            <p class="lead">{{ comment.username }}</p>
+            <p>{{ comment.content }}</p>
+            <span style="display: inline" *ngIf="(isLoggedIn$ | async)">
+                <a routerLink="/threadComment/{{comment._id}}">reply</a>
+              <span>  |  </span>
+                  <a *ngIf="comment.username === loggedInUsername && comment.content !== '[deleted]'" routerLink="/updateComment/{{comment._id}}">update/delete</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4">
+    <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+      <textarea formControlName="comment" cols="100" rows="3"></textarea>
+      </div>
+      <button type="submit" [disabled]="!commentForm.valid" class="btn btn-primary">Comment</button>
+    </form>
+  </div>

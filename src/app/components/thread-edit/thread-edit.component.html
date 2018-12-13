@@ -1,0 +1,23 @@
+<!-- thread-detail.component.html -->
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="text-lg-center">
+    <h1 *ngIf="isLoading" class="display-4">Loading...</h1>
+    <h1 *ngIf="!isLoading" class="display-4">Edit thread "{{ thread.title }}"</h1>
+    <hr class="my-4">
+  </div>
+</div>
+<div class="container" *ngIf="!isLoading">
+  <form [formGroup]="editThreadForm" class="form-thread" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Title:</label>
+      <input title="title" type="text" class="form-control" formControlName="title" required [placeholder]="thread.title">
+    </div>
+    <div class="form-group">
+      <label>Content:</label>
+      <textarea rows="5" title="content" type="text" class="form-control" formControlName="content" required [placeholder]="thread.content"></textarea>
+    </div>
+    <button type="submit" [disabled]="!editThreadForm.valid" class="btn btn-primary">Update thread</button>
+  </form>
+</div>
+

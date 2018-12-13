@@ -1,0 +1,15 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="text-lg-center">
+    <h1 class="display-4">Index</h1>
+    <hr class="my-4">
+  </div>
+</div>
+<div class="container" style="width: 100%">
+  <div class="row" style="margin: 1pt; width: 150%">
+<div style="margin: 1pt; border: 1px lightgray solid" class="col-sm-3" *ngFor="let thread of (threads$ | async)">
+      <h3><a href="javascript:void(0)" routerLink="/threadDetail/{{thread._id}}">{{thread.title}}</a></h3>
+      <p>{{thread.content.substring(0,150)}}</p>
+      <small><p>Author: {{thread.username}}</p></small>
+</div>
+  </div>
+</div>
