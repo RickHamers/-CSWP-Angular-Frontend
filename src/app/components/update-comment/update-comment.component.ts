@@ -14,7 +14,7 @@ export class UpdateCommentComponent implements OnInit {
 
   private commentForm: FormGroup;
   private comment;
-  private isLoading: boolean = true;
+  isLoading: boolean = true;
   private getThreadSubscription: Subscription;
 
   constructor(private activatedroute: ActivatedRoute, private threadservice: ThreadService, private authservice: AuthService, private router: Router) {

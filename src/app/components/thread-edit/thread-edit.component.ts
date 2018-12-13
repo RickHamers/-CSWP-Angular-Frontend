@@ -14,7 +14,7 @@ export class ThreadEditComponent implements OnInit {
 
   private editThreadForm: FormGroup;
   private thread;
-  private isLoading: boolean = true;
+  isLoading: boolean = true;
   private getThreadSubscription: Subscription;
 
   constructor(private activatedroute: ActivatedRoute, private threadservice: ThreadService, private authservice: AuthService, private router: Router) { }
