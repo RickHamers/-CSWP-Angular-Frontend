@@ -13,7 +13,7 @@ import {AuthService} from '../../services/auth.service';
 export class ThreadCommentComponent implements OnInit {
 
   private isLoggedIn$: Observable<boolean>;
-  private commentForm: FormGroup;
+  commentForm: FormGroup;
   private newComments = [];
   private comment;
   private isLoading: boolean = true;

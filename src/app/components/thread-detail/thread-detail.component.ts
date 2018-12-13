@@ -17,8 +17,8 @@ export class ThreadDetailComponent implements OnInit, OnDestroy {
   private commentForm: FormGroup;
   private newComments = [];
   private thread;
-  private isLoading: boolean = true;
-  private threadAuhorIsLoginName: boolean = false;
+  isLoading: boolean = true;
+  threadAuhorIsLoginName: boolean = false;
   private getThreadSubscription: Subscription;
 
   constructor(private activatedroute: ActivatedRoute, private threadservice: ThreadService, private authservice: AuthService, private router: Router) { }
