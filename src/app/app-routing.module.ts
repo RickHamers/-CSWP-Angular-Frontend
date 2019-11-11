@@ -10,10 +10,12 @@ import {ThreadEditComponent} from './components/thread-edit/thread-edit.componen
 import {ThreadCommentComponent} from './components/thread-comment/thread-comment.component';
 import {ProfileComponent} from './components/profile/profile.component';
 import {UpdateCommentComponent} from './components/update-comment/update-comment.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: 'about', component: AboutComponent},
   {path: 'login',  component: LoginComponent},
   {path: 'index', component: IndexComponent, canActivate: [IsLoggedInGuardService]},
   {path: 'threadCreate', component: ThreadCreateComponent, canActivate: [IsLoggedInGuardService]},
