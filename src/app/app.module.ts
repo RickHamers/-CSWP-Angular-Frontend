@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -16,6 +15,7 @@ import { ThreadEditComponent } from './components/thread-edit/thread-edit.compon
 import { ThreadCommentComponent } from './components/thread-comment/thread-comment.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UpdateCommentComponent } from './components/update-comment/update-comment.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { UpdateCommentComponent } from './components/update-comment/update-comme
     ThreadEditComponent,
     ThreadCommentComponent,
     ProfileComponent,
-    UpdateCommentComponent
+    UpdateCommentComponent,
+    AboutComponent
   ],
   imports: [
     FormsModule,

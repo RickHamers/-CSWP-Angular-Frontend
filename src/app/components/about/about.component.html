@@ -1,0 +1,141 @@
+<!-- about.component.html -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="text-lg-center">
+    <h1 class="display-4">About</h1>
+    <hr class="my-4">
+  </div>
+</div>
+<div _ngcontent-lam-c2="" class="row">
+  <div _ngcontent-lam-c2="" class="col-sm-6 col-md-8 col-lg-9">
+    <h1 _ngcontent-lam-c2="">About this application</h1>
+    <p _ngcontent-lam-c2=""> This application was made for the course 'Clientside web frameworks' at Avans Hogeschool Breda. </p>
+    <h3 _ngcontent-lam-c2="">CSWP Angular Front-end (Pseudo-Tweakers.net/Reddit)</h3>
+    <p _ngcontent-lam-c2="">
+      This Front-end serves as a knock-off forum, akin to tweakers.net & Reddit. You can create threads, on which people can comment.
+      You can only edit or delete comments or threads if they are your own. However, you can comments on other people's threads as
+      well as reply to other people's comments.You also have the ability to like or dislike  (or upvote/downvote) threads and comments.
+      You have a user profile which you can edit. You can change your password, for example.
+    </p>
+  </div>
+  <div _ngcontent-lam-c2="" class="col-sm-6 col-md-4 col-lg-3">
+    <div _ngcontent-lam-c2="" class="card">
+      <div _ngcontent-lam-c2="" class="d-flex justify-content-center align-items-center">
+        <img _ngcontent-lam-c2="" alt="..." class="card-img-top rounded-circle border profile-pic" src="../../../assets/img/RHa_192px.jpg"></div>
+      <div _ngcontent-lam-c2="" class="card-body">
+        <h5 _ngcontent-lam-c2="" class="card-title">Rick Hamers</h5>
+        <p _ngcontent-lam-c2="" class="card-text"> Studentnummer: 2128706 </p>
+      </div>
+    </div>
+  </div>
+</div>
+<h3 _ngcontent-lam-c2="">Entities</h3>
+<div _ngcontent-lam-c2="" class="row">
+  <div _ngcontent-lam-c2="" class="col-sm-12 col-md-4">
+    <p _ngcontent-lam-c2="">User</p>
+    <ul _ngcontent-lam-c2="">
+      <li _ngcontent-lam-c2="">Username: string (Unique)</li>
+      <li _ngcontent-lam-c2="">Password: string</li>
+    </ul>
+  </div>
+  <div _ngcontent-lam-c2="" class="col-sm-12 col-md-4">
+    <p _ngcontent-lam-c2="">Thread</p>
+    <ul _ngcontent-lam-c2="">
+      <li _ngcontent-lam-c2="">Title: string</li>
+      <li _ngcontent-lam-c2="">Content: string</li>
+      <li _ngcontent-lam-c2="">Author (Username): string</li>
+      <li _ngcontent-lam-c2="">Upvote: number</li>
+      <li _ngcontent-lam-c2="">Downvote: number</li>
+      <li _ngcontent-lam-c2="">Comments: list of comment entities</li>
+    </ul>
+  </div>
+  <div _ngcontent-lam-c2="" class="col-sm-12 col-md-4">
+    <p _ngcontent-lam-c2="">Comment</p>
+    <ul _ngcontent-lam-c2="">
+      <li _ngcontent-lam-c2="">Content: string</li>
+      <li _ngcontent-lam-c2="">Thread-ID: number</li>
+      <li _ngcontent-lam-c2="">Author (Username): string</li>
+      <li _ngcontent-lam-c2="">Upvote: number</li>
+      <li _ngcontent-lam-c2="">Downvote: number</li>
+      <li _ngcontent-lam-c2="">Sub-comments: List of comment entities</li>
+    </ul>
+  </div>
+</div>
+<div _ngcontent-lam-c2="" class="row">
+  <div _ngcontent-lam-c2="" class="col-12">
+    <h3 _ngcontent-lam-c2="">Use Cases</h3>
+    <p _ngcontent-lam-c2="">The following functionality is available in this application.</p>
+    <div _ngcontent-lam-c2="">
+        <table class="table table-sm table-bordered">
+          <tbody>
+            <tr class="table-primary">
+              <th scope="row" style="width: 16.66%">Naam</th>
+              <td><strong>UC-01 Registering an account</strong></td>
+            </tr>
+            <tr>
+              <th scope="row">Description</th>
+              <td>A user creates a user-account</td>
+            </tr>
+            <tr>
+              <th scope="row">Actor</th>
+              <td>Regular user</td>
+            </tr>
+            <tr>
+              <th scope="row">Precondition</th>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <th scope="row">Scenario</th>
+              <td>
+                <ol>
+                  <li>User clicks on the "Don't have an account yet? Click here!" link</li>
+                  <li>User fills in a valid Username and Password and clicks the "Create account" button</li>
+                  <li>The application validates whether an account with the credentials or username already exists.</li>
+                  <li>The application validates whether the input values match the minimum requirements.</li>
+                  <li>Upon acknowledgement of a valid registration attempt, the account will be created. The user will be taken to the Login page.</li>
+                </ol>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Postcondition</th>
+              <td>The actor has a user-account and can log in.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <div _ngcontent-lam-c2="">
+      <table class="table table-sm table-bordered">
+        <tbody>
+          <tr class="table-primary">
+            <th scope="row" style="width: 16.66%">Name</th>
+            <td><strong>UC-02 Logging in</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>An existing user logs in.</td>
+          </tr>
+          <tr>
+            <th scope="row">Actor</th>
+            <td>Regular user</td>
+          </tr>
+          <tr>
+            <th scope="row">Precondition</th>
+            <td>User has a user-account</td>
+          </tr>
+          <tr>
+            <th scope="row">Scenario</th>
+            <td>
+              <ol>
+                <li>User fills in the Username and Password fields correctly and clicks on the "Log in" button.</li>
+                <li>The application validates the login attempt.</li>
+                <li>Upon acknowledgement of a valid login attempt, the user will be logged in and greeted with the thread index page.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Postcondition</th>
+            <td>The actor is logged in and loaded into the thread index page</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>   
+</div>

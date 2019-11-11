@@ -28,6 +28,9 @@ body {
   background-size: cover;
 }
 
+.jumbotron.display-4 {
+  text-align: center;
+}
 
 .form-login {
   width: 100%;
